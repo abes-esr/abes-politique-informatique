@@ -1,3 +1,0 @@
-# Politique de développement
-
-test

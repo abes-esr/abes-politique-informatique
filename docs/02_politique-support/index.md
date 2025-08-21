@@ -1,3 +1,0 @@
-# Politique informatique support
-
-test
