@@ -8,12 +8,12 @@
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Politique de développement de l\'Abes',
+  title: 'Politique informatique de l\'Abes',
   tagline: '',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://POLITIQUE_DEVELOPPEMENT_ABES_BASEURL_PLACEHOLDER',
+  url: 'https://politique_informatique_abes_baseurl_placeholder',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -21,7 +21,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'abes-esr', // Usually your GitHub org/user name.
-  projectName: 'abes-politique-developpement', // Usually your repo name.
+  projectName: 'abes-politique-informatique', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -78,7 +78,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'Politique de développement de l\'Abes',
+        title: 'Politique informatique de l\'Abes',
         logo: {
           alt: 'Logo Abes',
           src: 'img/logo-abes-cercle-130x130.svg',

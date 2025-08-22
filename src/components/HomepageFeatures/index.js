@@ -1,19 +1,23 @@
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
     {
-        title: 'Politique de développement de l\'Abes',
+        title: 'Politique informatique de l\'Abes',
         Svg: require('../../../static/img/logo-abes-cercle-130x130.svg').default,
         description: (
             <>
                 <p>
-                    La politique de développement de l'Abes nous donne un cadre pour structurer nos développements informatiques.
-                    Cette politique est rédigée par les développeur(se)s de l'Abes avec la participation de collègues du service Infrastructures et Réseaux.
-                    Elle nous fournit des méthodes et des outils pour améliorer la qualité de nos projets et applications.
-                </p>
-                <p>
-                    <br/>Pour toute question ou remarque, vous pouvez écrire à <a href="mailto:github@abes.fr">github@abes.fr</a>
+                    La politique informatique de l'Abes donne un cadre pour structurer la maintenance et les évolutions du système d'information de l'Abes.
+                    La politique est en cours de rédaction et elle est structurée en 5 parties :
+                    <ul>
+                    <li>politique d'infrastructure (🚧 à faire),</li>
+                    <li>politique de support informatique (🚧 à faire),</li>
+                    <li>politique de développement,</li>
+                    <li>politique informatique du labo (🚧 à faire),</li>
+                    <li>gouvernance (🚧 à faire)</li>
+                    </ul>
                 </p>
             </>
         ),
