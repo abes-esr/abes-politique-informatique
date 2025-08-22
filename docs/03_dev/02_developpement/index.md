@@ -434,3 +434,12 @@ La dernière étape pour que les logs remontent jusqu'au puits de logs de l'Abes
 
 
 
+
+
+
+
+
+
+## Intégration d’applications en SaaS
+
+Todo à rédiger, parler ici de nos principes et bonnes pratiques génériques pour l’extension et l'intégration des applications en SaaS (exemple : Wordpress)
