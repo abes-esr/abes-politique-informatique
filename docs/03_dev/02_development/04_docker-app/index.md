@@ -65,7 +65,15 @@ Le fichier docker-compose.yml de l'application décrit tous les conteneurs de l'
 
 Une application qui est déployée en dev, test ou prod sera configurée différement. Des variables permettant de faire varier cette configuration doivent donc être prévues.
 
-Pour chaque application, nous préconisons l'utilisation de variables d'environnement qui utilisent le système du fichier `.env` que docker comprend. Ce fichier contient les variables d'environnement nécessaires aux conteneurs de l'application. Ce fichier est personnalisé manuellement au moment du premier déploiement et dépend de l'environnement de déploiement : dev, test ou prod. Pour créer ce fichier il suffit de faire une copie du fichier .env-dist qui est dans le dépôt `<appli>-docker` de l'application (il contient la liste des variables nécessaires aux conteneurs avec des exemples)
+Pour chaque application, nous préconisons l'utilisation de variables d'environnement qui utilisent le système du fichier `.env` que docker interprétera. Ce fichier contient les variables d'environnement nécessaires aux conteneurs de l'application. Ce fichier est personnalisé manuellement au moment du premier déploiement et dépend de l'environnement de déploiement : dev, test ou prod. Pour créer ce fichier il suffit de faire une copie du fichier `.env-dist` qui est dans le dépôt `<appli>-docker` de l'application. Ce fichier contient la liste des variables nécessaires aux conteneurs avec des exemples (voir un exemple sur [hello-abes](https://github.com/abes-esr/abes-hello-docker/blob/develop/.env-dist))
+
+Les variables doivent respecter la nomenclature suivante : 
+- être en majuscule et utiliser des `_` pour séparer les différentes parties
+- commencer par le nom du conteneur
+- continuer par un nom court expliquant ce que contient cette variable
+
+Exemple (cf [git](https://github.com/abes-esr/abes-hello-docker/blob/05c1038233a5385a6a535685877e96fe931d9093/.env-dist#L65-L66)) : `ABESHELLO_DB_USER` pour le nom d'utilisateur d'une base de données, et `ABESHELLO_DB_PASSWORD` pour le mot de passe d'accès à cette meme base de données. 
+
 
 ## Choix des ports réseau des conteneurs
 
