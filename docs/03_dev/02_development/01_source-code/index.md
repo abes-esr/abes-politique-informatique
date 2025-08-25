@@ -109,10 +109,10 @@ Un soin particulier doit être apporté à la rédaction des messages de commit.
     * Refactor : Refactorisation ou nettoyage de code existant, sans impact sur les fonctionnalités
 
 Un message de commit doit donc être structuré ainsi :
+```
 NumeroISSUE Type : Message du commit
-
 Court paragraphe décrivant les modifications plus en détail si nécessaire
-
+```
 
 ## Création et configuration d'un nouveau dépôt
 
