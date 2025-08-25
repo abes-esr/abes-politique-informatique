@@ -9,14 +9,14 @@ const FeatureList = [
         description: (
             <>
                 <p>
-                    La politique informatique de l'Abes donne un cadre pour structurer la maintenance et les évolutions du système d'information de l'Abes.
-                    La politique est en cours de rédaction et elle est structurée en 5 parties :
+                    La politique informatique de l'Abes donne un cadre pour structurer la maintenance et les évolutions du système d'information de l'Abes.<br/>
+                    La politique est en cours de rédaction. Elle est structurée en 5 parties :
                     <ul>
-                    <li>politique d'infrastructure (🚧 à faire),</li>
-                    <li>politique de support informatique (🚧 à faire),</li>
-                    <li>politique de développement,</li>
-                    <li>politique informatique du labo (🚧 à faire),</li>
-                    <li>gouvernance (🚧 à faire)</li>
+                        <li>politique d'infrastructure (🚧),</li>
+                        <li>politique de support informatique (🚧),</li>
+                        <li><a href="/docs/dev/">politique de développement</a>,</li>
+                        <li>politique informatique du labo (🚧),</li>
+                        <li>gouvernance (🚧)</li>
                     </ul>
                 </p>
             </>
