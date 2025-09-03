@@ -13,7 +13,7 @@ Une application dockerisée respecte plusieurs règles :
 
 ## Nommage des images docker
 
-Pour nommer les images docker publiées sur [DockerHub abesesr](https://hub.docker.com/u/abesesr), nous privilégions cette nommenclature :
+Pour nommer les images docker (elles sont publiées sur [DockerHub abesesr](https://hub.docker.com/u/abesesr)), nous privilégions cette nommenclature :
 - `<organisationdocker>/<nomapplication>:<nom-branche|numero-version>-<module-applicatif>`
 - exemple pour l'image docker du front de l'application `abes-hello` sur sa branche `develop` : `abesesr/abes-hello:develop-front`
 - exemple pour l'image docker des batchs de l'application `abes-hello` sur sa branche `develop` : `abesesr/abes-hello:develop-batch`
