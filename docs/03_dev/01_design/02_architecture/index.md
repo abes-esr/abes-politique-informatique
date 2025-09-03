@@ -5,7 +5,7 @@ L’analyse des projets menés à l'Abes a permis de découvrir des structures d
 
 C'est pourquoi l'utilisation de frameworks spécifiques à chaque type de projet est maintenant préconisée.
 
-Nous pouvons classer nos projets / applications en trsoi catégories : api, web, et batch
+Nous pouvons classer nos projets / applications en trois catégories : api, web, et batch
 
 ## Application de type API
 
