@@ -70,8 +70,8 @@ Exemple : https://documentation.abes.fr/aidequalimarc/index.html#VersionsLogicie
 
 ## Cartographie et processus métiers
 
-Tous les outil et applications de l'Abes qui sont en production doivent être cartographiées (via l'outil [Archi](https://www.archimatetool.com/)) dans https://urbanisation.abes.fr (accès interne Abes)
+Tous les outils et applications de l'Abes qui sont en production doivent être cartographiées (via l'outil [Archi](https://www.archimatetool.com/)) dans https://urbanisation.abes.fr (accès interne Abes)
 
-Parfois les évolutions des outils et applications de l'Abes peuvent nécessiter une analyse avancée des processus métiers pour aider l'équipe projet à comprendre le fonctionnement d'une application. Des processus métiers en BPMN (via l'outil [Bizagi](https://www.bizagi.com/)) peuvent donc être réalisés à la demande mais ne sont pas systématisés car leur création est très consomatrice en temps. Les BPMN sont stockées sur https://urbanisation.abes.fr/bpmn/ (accès interne Abes)
+Parfois les évolutions des outils et applications de l'Abes peuvent nécessiter une analyse avancée des processus métiers pour aider l'équipe projet à comprendre le fonctionnement d'une application. Des processus métiers en BPMN (via l'outil [Bizagi](https://www.bizagi.com/)) peuvent donc être réalisés à la demande mais ne sont pas systématisés car leur création est très consommatrice en temps. Les BPMN sont stockées sur https://urbanisation.abes.fr/bpmn/ (accès interne Abes)
 
  
