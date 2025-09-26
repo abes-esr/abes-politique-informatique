@@ -87,7 +87,7 @@ La mise en place d'une "belle URL" en HTTPS est préconisée pour les applicatio
 
 ## Accès au système de fichier par les conteneurs
 
-A rédiger : parler aussi ici des applications qui ont besoin accéder à un disque réseau via un montage NFS, nous privilégions de configurer un volume avec un NFS paramétrable (exemple : ezstats)
+A rédiger (🚧) : parler aussi ici des applications qui ont besoin accéder à un disque réseau via un montage NFS, nous privilégions de configurer un volume avec un NFS paramétrable (exemple : ezstats)
 
 ## Configuration de logs des conteneurs
 
