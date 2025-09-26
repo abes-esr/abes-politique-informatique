@@ -10,7 +10,7 @@ La politique informatique de l‘Abes a pour objectif de faciliter l’administr
 Elle est structurée en 5 parties : 
 - politique d'infrastructure (🚧), 
 - politique de support informatique (🚧), 
-- politique de développement, 
+- [politique de développement](./03_dev/index.md), 
 - politique informatique du labo (🚧), 
 - gouvernance (🚧)
 
