@@ -22,7 +22,7 @@ RUN npm run build
 
 ## Deploy ######################################################################
 # Use a stable nginx image
-FROM nginx:1.25 as politique-developpement-image
+FROM nginx:1.25 as politique-informatique-image
 # Copy what we've installed/built from production
 COPY --from=build-image /app/build /usr/share/nginx/html/
 COPY ./.docker/nginx-default.conf.template   /etc/nginx/templates/default.conf.template
