@@ -1,13 +1,11 @@
-# Sécurité
+# Sécurité d'une application
 
-## Règles générales
-
-Les documents publiés par l'Agence Nationale de la Sécurité des Systèmes d'Information (https://www.ssi.gouv.fr/uploads/IMG/pdf/NP_Securite_Web_NoteTech.pdf) ou la communauté OWASP (https://owasp.org/www-project-application-security-verification-standard/) fournissent des ensembles de règles que nous nous efforçons de garder à l'esprit lors des phases de conception de nos applications.
+Les documents publiés par l'Agence Nationale de la Sécurité des Systèmes d'Information (https://cyber.gouv.fr/sites/default/files/IMG/pdf/NP_Securite_Web_NoteTech.pdf) ou la communauté OWASP (https://owasp.org/www-project-application-security-verification-standard/) fournissent des ensembles de règles que nous nous efforçons de garder à l'esprit lors des phases de conception de nos applications. La CNIL fournit également un [guide de bonnes pratiques](https://github.com/LINCnil/Guide-RGPD-du-developpeur/blob/master/06-S%C3%A9curiser%20vos%20sites%20web%2C%20vos%20applications%20et%20vos%20serveurs.md) que nous nous efforçons de suivre.
 
 Nous utilisons les analyses Sonarqube pour repérer les éventuels problèmes de sécurité dans le code que nous produisons. Les règles appliquées pour le langage Java sont disponibles ici : https://rules.sonarsource.com/java
 Nos projets dont les dépôts sont sur Github sont analysés via Sonarcloud.
 
-La CNIL fournit un guide de bonnes pratiques : https://github.com/LINCnil/Guide-RGPD-du-developpeur/blob/master/06-S%C3%A9curiser%20vos%20sites%20web%2C%20vos%20applications%20et%20vos%20serveurs.md
+Depuis le 19 juillet 2024, nous homologons toutes les applications utilisée en production. Pour cela nous disposons d'une [procédure d'homologation d'une application](https://abesfr.sharepoint.com/:w:/r/sites/Bouda/Securite/CelluleSecurite/Homologation/ProcedureHomologation.docx?d=w1084c2b832f6416abe2b2d4ba7a1157d&csf=1&web=1&e=5B8FXw) (lien interne). Nous nous appuyons sur le service https://monservicesecurise.cyber.gouv.fr/ proposé par l'ANSSI (voir aussi l'[article dans le blog technique de l'Abes](https://punktokomo.abes.fr/2025/06/23/homologation-de-securite-des-systemes-dinformation-labes-sengage-avec-monservicesecurise/)). 
 
 ## Gestion des authentifications
 
@@ -35,8 +33,8 @@ Les règles suivantes :
 * au moins un chiffre
 * au moins un caractère spécial (!@#$%&*())
 
-peuvent être vérifiées par cette expression régulière : `"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}"`
-Les mots de passe doivent obligatoirement être stockés encryptés : nous utilisons BCrypt.
+peuvent être vérifiées par cette expression régulière : `"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}"`  
+Les mots de passe doivent obligatoirement être hashés pour le stockage : nous utilisons [BCrypt](https://fr.wikipedia.org/wiki/Bcrypt).
 
 On peut utiliser par exemple le site : https://passwordsgenerator.net/ pour générer un mot de passe.  
 Et le site https://www.security.org/how-secure-is-my-password/ pour tester sa robustesse.
@@ -47,8 +45,10 @@ Il faut ajouter un système pour bloquer momentanément le compte au-delà d'un 
 
 ## Analyse dependabot
 
-Dependabot est un outil qui analyse les vulnérabilités des dépendances utilisées par nos codes sources. Lorsque une faille est découverte, dependabot propose une pull request avec la montée en version de la dépendance. L'activation de dependabot se configure via l'onglet Security. L'outil analyse la branche main. Voici la procédure à suivre lorsqu'une PR est proposée :
+[Dependabot](https://docs.github.com/fr/code-security/getting-started/dependabot-quickstart-guide) est un outil GutHub qui analyse les vulnérabilités des dépendances utilisées par nos codes sources. Lorsque une faille est découverte, dependabot propose une pull request avec la montée en version de la dépendance. L'activation de dependabot se configure via l'onglet Security. L'outil analyse la branche main. 
 
+
+Voici la procédure à suivre lorsqu'une PR est proposée :
 * Récupérer en local la branche avec la montée de version proposée par depenbdabot et tester si l'application fonctionne avec la nouvelle version. Pour le code VueJS, il faut lancer les commandes "npm install" (pour récuperer les dependances) puis "npm run serve" pour vérifier l'application.
 * Si aucun problème n'est détecté, il faut merger la branche sur main. On fusionne ensuite main sur develop.
 
@@ -67,7 +67,7 @@ Plusieurs sites de l'Abes implémentent un Captcha dont voici un recensement :
 - Licences Nationales pour la création de compte (reCaptcha) : https://acces.licencesnationales.fr/creation-compte
 - Calames (système ad-hoc qui serait à modifier en reCaptcha) : http://www.calames.abes.fr/pub/ssl/Reg.aspx
 
-## Sécurisation par CORS des API de votre application
+## Sécurisation par CORS des API de l'application
 
 CORS est l'acronyme de ["Cross-origin resource sharing"](https://fr.wikipedia.org/wiki/Cross-origin_resource_sharing). C'est un système implémenté dans les navigateurs web modernes qui permet de filtrer quels sont les sites web qui peuvent accéder ou pas à votre API via HTTP en précisant si besoin les méthodes HTTP que l'on autorise.
 
@@ -96,4 +96,7 @@ public FilterRegistrationBean simpleCorsFilter() {
 
 Ce code est implémenté dans notre application "Hello World" nommée abes-hello, vous le trouverez ici:  
 https://github.com/abes-esr/abes-hello-back/blob/develop/web/src/main/java/fr/abes/helloabes/HelloABESApplication.java#L168-L187
+
+
+
 

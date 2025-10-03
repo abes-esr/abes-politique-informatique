@@ -1,9 +1,9 @@
-# Tests unitaires et d'intégration
+# Tests
 
-Il existe plusieurs types de tests logiciels, et concernant plus précisément le code, nous parlons ici des tests unitaires et des tests d’intégration.
+Il existe plusieurs types de tests logiciels. Nous parlons de tests unitaires et de tests d'intégration pour les tests qui concernant plus précisément le code. Nous parlons de tests fonctionnels pour les tests qui concernent plus précisément ce qui est attendu par le métier.
 
-Les premiers isolent des unités de code (par exemple une méthode) et vérifient le comportement du code en le rendant le plus possible indépendant de son environnement (on utilise pour cela des « mocks objects » qui permettent de simuler un composant : par exemple, on peut créer un mock object pour se comporter comme un accès à une base de données : ainsi le test n’échouera pas à cause d’un problème liée à la base de donnée).  
-Les seconds vont au contraire tester un enchaînement d’opérations, par exemple depuis un clic sur une interface utilisateur jusqu'à une requête dans la base de données.
+Les tests unitaires isolent des unités de code (par exemple une méthode) et vérifient le comportement du code en le rendant le plus possible indépendant de son environnement (on utilise pour cela des « mocks objects » qui permettent de simuler un composant : par exemple, on peut créer un mock object pour se comporter comme un accès à une base de données : ainsi le test n’échouera pas à cause d’un problème liée à la base de donnée).  
+Les tests d'intégration vont au contraire tester un enchaînement d’opérations, par exemple depuis un clic sur une interface utilisateur jusqu'à une requête dans la base de données.
 
 Les tests unitaires sont systématiquement exécutés lors des builds sur notre plateforme d'intégration continue. Les tests d'intégration peuvent éventuellement être exécutés indépendemment si leur exécution ralentit trop le build.
 
@@ -19,7 +19,11 @@ Globalement, l'écriture de tests permet de :
 
 Le framework de test unitaire que nous utilisons est jUnit. Il permet de réaliser des suites de tests basés sur des assertions. Il bénéficie d'une bonne intégration avec Maven (pour automatiser l'exécution des tests) et avec l'IDE IntelliJ dans lequel on peut visualiser aisément les résultats.
 
-## Bonnes pratiques
+## Tests unitaires en Javascript
+
+Nous préconisons l'écriture de tests pour le code client produit avec le framework VueJs : https://vuejs.org/v2/guide/testing.html#Vue-Test-Utils
+
+## Tests unitaires : bonnes pratiques
 
 * Les tests unitaires doivent s’exécuter entièrement en mémoire (ne pas écrire des tests qui font des appels http, vers des DB ou vers le système de fichiers).
 * Le nom du test unitaire doit être le plus parlant possible (par exemple comporter le nom de la méthode et de la condition à tester
@@ -30,7 +34,11 @@ Le framework de test unitaire que nous utilisons est jUnit. Il permet de réalis
 * ne pas déclarer static les membres de la classe de test
 * inutile d’entourer une méthode qui soulève une exception par un bloc try/catch, le framework jUnit s’en charge
 
-## Test unitaires  en Javascript
+## Tests fonctionnels
 
-Nous préconisons l'écriture de tests pour le code client produit avec le framework VueJs : https://vuejs.org/v2/guide/testing.html#Vue-Test-Utils
- 
+Les tests fonctionnels ne sont pas automatisés. Ils nécessitent des actions manuelles qui consistent à venir tester les fonctionnalités de l'application aux différentes étapes du cycle de vie du logiciel.
+
+Les différents environnements permettant de réaliser des tests fonctionnels sont le suivants : 
+- environnement de dev : cet environnement est ouvert aux développeurs et des tests fonctionnels basiques y sont réalisés par les développeurs eux même
+- environnement de test : cet environnement est ouvert aux experts métiers de l'Abes et à des utilisateurs choisis parmis les réseaux de l'Abes ("parties prenantes" dans la terminologie Scrum), il permet de réaliser de tests fonctionnels avancés par les experts connaissant en détail le fonctionnement de l'application
+- environnement de prod : comme son nom l'indique cet environnement est dédié à l'application qui tourne en production, il n'est pas destiné aux tests fonctionnels car les tests ont déjà été réalisé précédement. A notre cependant que des environnements de prod étiqueté "beta" peuvent être ouverts aux utilisateurs finaux et permettent de faire tester à grande échelle une application avant son ouverture officielle.

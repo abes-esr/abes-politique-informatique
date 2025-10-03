@@ -1,6 +1,9 @@
-# Conformité au RGPD
+
+
+# RGPD
 
 ## Cookies et autres traceurs
+
 ### Cadre juridique
 
 Lorsqu'ils visitent un site web, les utilisateurs doivent être informés et donner leur consentement préalablement au dépôt ou la lecture de cookies et autres traceurs, à moins que ces traceurs ne bénéficient d’une des exemptions prévues par l’[article 82 de la loi Informatique et Libertés](https://www.cnil.fr/fr/la-loi-informatique-et-libertes#article82).
@@ -8,12 +11,12 @@ Lorsqu'ils visitent un site web, les utilisateurs doivent être informés et don
 Les cookies permettant de collecter les données personnelles de l'utilisateur doivent faire l'objet d'une **information** et d'un **recueil de consentement**.
 Seuls les cookies indispensables au bon fonctionnement du site sont exemptés de consentement, mais ils doivent être consultables dans le panneau de recueil de consentement et dans la page de politique des cookies.
 
-Pour rappel, d'après la CNIL
-*L'article 5(3) de la directive 2002/58/CE modifiée en 2009 pose le principe :*
+Pour rappel, d'après la CNIL l'article 5(3) de la directive 2002/58/CE modifiée en 2009 pose le principe :
 - *d'un consentement préalable de l'utilisateur avant le stockage d'informations sur son terminal ou l'accès à des informations déjà stockées sur celui-ci ;*
 - *sauf si ces actions sont strictement nécessaires à la fourniture d'un service de communication en ligne expressément demandé par l'utilisateur ou ont pour finalité exclusive de permettre ou faciliter une communication par voie électronique.*
 
 Pour plus de précisions, vous pouvez vous référer au [site web de la CNIL](https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies/que-dit-la-loi).
+
 ### Rédaction de la politique de cookies
 
 La politique des cookies permet d'informer les utilisateurs sur la nature des cookies qui sont stockés par le site web dans leur navigateur.
@@ -44,9 +47,9 @@ Cette alternative doit être proposée clairement sur la page, à l'image du for
 
 Certains cookies sont considérés comme "strictement nécessaires" au fonctionnement d'un site web (par exemple, ceux utilisés pour mémoriser les choix de l'utilisateur concernant les cookies). Ces cookies peuvent être utilisés sans consentement préalable.
 
-## Tarteaucitron.io : panneau de recueil de consentement
+## Intégration du consentement des utilisateurs
 
-Tarteaucitron est un outil open-source javascript utilisé dans la gestion des cookies sur les sites web. Il est facilement et rapidement implémentable, il est spécifiquement concu pour répondre aux exigences du RGPD en matière de consentement des utilisateurs pour le dépôt de cookies.
+Nous utilisons [Tarteaucitron.io](https://tarteaucitron.io/) qui est un outil open-source javascript utilisé dans la gestion des cookies sur les sites web. Il est facilement et rapidement implémentable, il est spécifiquement concu pour répondre aux exigences du RGPD en matière de consentement des utilisateurs pour le dépôt de cookies.
 Il prend en charge une large gamme de services tiers.
 
 ![Présentation du panneau de gestion des cookies de tarteaucitron.io](/img/13-bandeau-tarteaucitron.png)
@@ -203,3 +206,25 @@ useHead({
 ``` 
 
 4. Remplacez "XXXXX" par la clé de l'API *Google ReCAPTCHA*
+
+
+
+
+## Bonnes pratiques concernant les données personnelles
+
+Concernantla notion d’informatique et liberté, on peut dégager les bonnes pratiques suivantes :
+
+* Ne pas effectuer de développements ni de tests sur les environnements de production.
+* Ne pas effectuer de tests sur des données personnelles réelles et utiliser des techniques d’anonymisation.
+* Prévoir une gestion rigoureuse des habilitations et droits d’accès sur les applications.
+* Prévoir en préalable à la mise en production d’une application la durée de conservation de tous les comptes utilisateurs et administrateurs.
+* Ne pas partager les comptes administrateurs entre plusieurs personnes.
+* Sécuriser systématiquement l’interface d’administration des applications.
+* Dans le cadre des données personnelles, prévoir des systèmes de purge automatique afin de respecter la durée de conservation des données, définie en amont de la mise en production.
+* Etre vigilant quant à la compatibilité du format des données avec la durée de conservation (ex : date sur 4 caractères et non 2).
+* Prévoir des modalités sécurisées lorsque l’application permet le dépôt de fichiers.
+* Prévoir dans les applications une mention de mise en garde contre un contenu abusif, pour toutes les zones de texte libre.
+* Prévoir une page Mentions légales dès lors que l’application contient des données personnelles.
+
+De façon générale, il faut se référer au guide RGPD fourni par la CNIL : [https://github.com/LINCnil/Guide-RGPD-du-developpeur](https://github.com/LINCnil/Guide-RGPD-du-developpeur)
+

@@ -1,6 +1,9 @@
-# Environnements de développement, test et production
+# La plateforme IaaS
 
-## Types d'environnement
+
+## Environnements de développement, test et production
+
+### Types d'environnement
 Nous déployons nos applications sur trois types d’environnements :
 * __Développement__ (appelé aussi "dev")  
   Les développeurs testent le code qu'ils produisent en local sur leur machine. On dispose également d'un environnement de développement, c'est à dire un environnement partagé qui permet de réaliser les tests techniques du programme dans un environnement proche de la production (même version de Linux etc.). Cet environnement peut également servir à tester les montée de version des composants de l'application (container tomcat etc.). Il est accessible en interne.
@@ -14,7 +17,7 @@ Nous déployons nos applications sur trois types d’environnements :
 
 * Le cas échéant, un environnement de préproduction peut être nécessaire. On pense par exemple au déploiement d'une correction de bug sur la production.
 
-## Architecture des environnements
+### Architecture des environnements
 
 Chaque environnement est cloisonné. On ne peut pas accéder depuis un type d’environnement à un autre. Il n’y a par contre pas de cloisonnement par application.
 
@@ -29,7 +32,7 @@ Remarque pour les batch : la variable d'environnement `APPLIS_ENV` n'est pas aut
 
 Dans chaque type d’environnement, on peut trouver des serveurs d’application, des serveurs d’indexation, des serveurs de base de données. L’existence de chacun de ces serveurs n’est pas systématique et reste relative à chaque application. Chaque application doit être accompagnée de sa documentation explicitant sa propre architecture : elle doit préciser le type de serveurs mis en œuvre, la version des composants logiciels.
 
-## Maintenance technique et configuration
+### Maintenance technique et configuration
 Concernant la mise à jour des composants logiciels, la procédure est la suivante : à un instant t, les environnements de développement, test et production ont les mêmes versions de middleware (Centos, Tomcat, JDK, etc.) Si une mise à jour est nécessaire, elle est faite pour le composant donné sur l’environnement de test. Les problèmes techniques résultant de la migration doivent être résolus sur l’environnement de test. Lorsque les tests fonctionnels passent, on peut réaliser la migration en production et en développement.
 
 Les déploiements sur ces environnements sont automatisés via des jobs Jenkins qui lancent les scripts Puppet. Ils sont activés par les développeurs. Les déploiements ne doivent pas être réalisés via le manager Tomcat (il peut en effet manquer des étapes, par exemple la copie de fichiers de configuration).

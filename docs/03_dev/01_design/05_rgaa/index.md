@@ -1,43 +1,10 @@
-# Accessibilité Web
 
-<a id="sommaire"></a>
+# RGAA
 
-## I. Sommaire
 
-* [Principe](#principe)
-* [Champ d'application](#application)
-* [En pratique, pour les équipes de développement](#pratique)
-    * [Image](#image)
-    * [Icône](#icone)
-    * [Titre](#titre)
-    * [Titre et icône imbriquée](#titreavecicone)
-    * [Tableau](#tableau)
-    * [Bouton](#bouton)
-    * [Navigation](#navigation)
-    * [Lien](#lien)
-* [Tests](#test)
-
-<a id="principe"></a>
-
-## II. Principe
-
-<!-- Balise d'ouverture de l'indentation des sous-titres du chapitre I -->
-<ul>
 L'accessibilité du web est la possibilité d'accéder aux contenus et services web pour les personnes handicapées (visuels, auditifs, moteurs, neurologiques, handicapées temporaires, etc.), pour les personnes âgées ou peu habituées aux conténus et services web et plus généralement pour tous les utilisateurs, quels que soient leurs moyens d'accès (mobile, tablette, ordinateur, télévision, etc.) ou leur conditions d'environnement (luminosité, niveau sonore, bande passante réduite, etc.)
 
 Les pratiques d'accessibilité ont pour vocation de réduire ou supprimer les obstacles qui empêchent les utilisateurs d'accéder ou d'interagir avec des services. Le respect de ces pratiques s'applique autant aux UX/UI designers lors de la conception de l'identité graphique et du fonctionnement d'un projet web, qu'aux équipes de développement lors de l'écriture du code d'un projet.
-
-[Sommaire](#sommaire)
-
-<!-- Balise de fermeture de l'indentation des sous-titres du chapitre I -->
-</ul>
-
-<a id="application"></a>
-
-## III. Champ d'application
-
-<!-- Balise d'ouverture de l'indentation des sous-titres du chapitre II -->
-<ul>
 
 Les acteurs et actrices qui participent à la création d'un service web doivent considérer que les utilisateurs peuvent :
 
@@ -51,17 +18,10 @@ Les acteurs et actrices qui participent à la création d'un service web doivent
 
 La prise en compte de ces problématiques est essentielle afin de rendre les services web accessibles à tous.
 
-[Sommaire](#sommaire)
-<!-- Balise de fermeture de l'indentation des sous-titres du chapitre II -->
-</ul>
 
-<a id="pratique"></a>
+## RGAA en pratique
 
-## IV. En pratique, pour les équipes de développement
-
-<ul>
-:warning: Ce document est encore en cours de rédaction. Il sera étoffé dans les semaines/mois à venir.
-Si vous avez des correctifs à apporter, n'hésitez pas à faire remonter vos idées.
+RGAA en pratique pour les équipes de développement VueJS.
 
 La structure d'une application web est importante. En effet, celle-ci peut être lu par un lecteur d'écran
 et servir à la navigation. De fait, il est nécessaire d'y porter une attention particulière.
@@ -79,10 +39,7 @@ D'autres encore, ne génèrent pas d'informations exploitables pour les lecteurs
 
 Voici listé ci-dessous quelques UI Component VueJs et les méthodes pour améliorer leur accessibilité.
 
-[Sommaire](#sommaire)
-
-<a id="image"></a>
-### 1. Image :
+### Image
 
 La balise HTML ```<img>``` et l'UI Component VueJs ```<v-img>``` possédant toutes les deux un attribut ```alt=""```,
 la mise en place de description est facilitée.
@@ -96,11 +53,7 @@ ou :
 <v-img src="/img/logo.svg" alt="logo [nom_de_l_application]">
 ```
 
-[Sommaire](#sommaire)
-
-<a id="icone"></a>
-### 2. Icône :
-
+### Icône
 
 L'UI Component VueJs ```<v-icon>``` ne prend pas en compte l'attribut ```alt```.
 De plus, un ```<v-icon>``` simple (ex : ```<v-icon>mdi-home< /v-icon>```) ne permet pas
@@ -125,10 +78,7 @@ La solution consiste à simplement ajouter un ```aria-label``` au ```<v-icon>```
 <v-icon @click="goToHome()" aria-label="Retourner à l'accueil">mdi-home</v-icon>
 ```
 
-[Sommaire](#sommaire)
-
-<a id="titre"></a>
-### 3. Titre :
+### Titre
 
 Utiliser les balises HTML ```<h1>``` à ```<h6>```, afin que les lecteurs d'écran puissent les détecter et permettre la navigation par titre au clavier.
 
@@ -144,11 +94,7 @@ h2 {
   font-weight: bold;
 }
 ```
-
-[Sommaire](#sommaire)
-
-<a id="titreavecicone"></a>
-### 4. Titre et icône imbriquée :
+### Titre et icône imbriquée
 
 Dans le cas des titres avec numérotation par icônes,
 il est possible d'imbriquer une ```<v-icon>``` de numérotation dans un titre (```<h1>``` à ```<h6>```).  
@@ -168,20 +114,14 @@ le titre sera lu par le lecteur d'écran au passage de la souris sur la ```<v-ic
 dans le cas où un ```vertical-align``` (```baseline```, ```text-top```, ```text-bottom```, ```sub``` ou ```super```)
 ne le permet pas efficacement.
 
-[Sommaire](#sommaire)
-
-<a id="tableau"></a>
-### 5. Tableau
+### Tableau
 
 Les contenus des tableaux sont régis selon les mêmes principes que leur type de base.
 C'est-à-dire que les titres de colonne sont du texte et seront donc lus comme du texte.
 
 Les images et icônes, elles, seront traitées comme tel. À ce propos, voir : [image](#image) ou [icone](#icone) plus haut.
 
-[Sommaire](#sommaire)
-
-<a id="bouton"></a>
-### 6. Bouton
+### Bouton
 
 Plusieurs types de boutons existe. Chacun sera lu et interprété différemment par les lecteurs d'écran.
 
@@ -208,10 +148,7 @@ car cela génère un conflit aria-role entre le ```<v-btn>``` et le ```<v-icon>`
     </v-btn>
     ```
 
-[Sommaire](#sommaire)
-
-<a id="navigation"></a>
-### 7. Navigation
+### Navigation
 
 La balise HTML ```<nav>``` permet la reconnaissance d'une zone de navigation comme élément de structure par les lecteurs d'écran,
 offrant de fait plus d'option de navigation, notamment au clavier. Une seule zone de navigation devrait être spécifiée
@@ -276,11 +213,7 @@ pour une application.
 }
 ```
 
-
-[Sommaire](#sommaire)
-
-<a id="lien"></a>
-### 8. Lien
+### Lien
 
 La balise HTML ```<a>```, permet la création de lien. Elle doit être complétée par un attribut ```aria-label```
 qui reprend le texte du lien et le complète d'informations utiles aux personnes se servant de logiciel d'aide
@@ -292,15 +225,8 @@ nouvel onglet et signalé comme tel pour les utilisateurs.
 <a href="https://abes.fr/mentions-legales/" aria-label="Ouvre, dans un nouvel onglet du navigateur, la page internet de l'Abes sur les mentions légales" target="_blank">Mentions légales</a> 
 ```
 
-[Sommaire](#sommaire)
+## Tests RGAA
 
-</ul>
-
-<a id="test"></a>
-## V. Tests
-
-<!-- Balise d'ouverture de l'indentation des sous-titres du chapitre IV -->
-<ul>
 Plusieurs outils permettent de contrôler que le code de l'application respecte les règles d'accessibilité. 
 
 * Application.s lourde.s :
@@ -317,6 +243,5 @@ Plusieurs outils permettent de contrôler que le code de l'application respecte 
 |    Wave Evaluation Tool     |     FireFox, Chrome     | Affiche l'ordre de défilement des éléments de l'interface (via la touche Tab). <br/> Affiche la structure de l'interface. <br/> Contrôle le taux de contraste entre les éléments superposés et propose un pickup color intégré pour effectuer des tests.  |
 |    WCAG Contrast checker    |     Firefox, Chrome     | Contrôle le taux de contraste entre les éléments superposés et propose un pickup color intégré pour effectuer des tests.                                                                                                                                  |
 
-[Sommaire](#sommaire)
-<!-- Balise de fermeture de l'indentation des sous-titres du chapitre IV -->
-</ul>
+
+

@@ -1,15 +1,16 @@
 # Gestion du code source
 
-Pour gérer nos codes sources, nous utilisons majoritairement [Github](https://github.com/abes-esr) comme gestionnaire de code open source (ou SCM pour source control management) associé à notre [plateforme d'intégration continue](https://github.com/abes-esr/abes-politique-developpement/blob/main/02-Int%C3%A9gration%20continue.md).
+Pour gérer nos codes sources, nous utilisons majoritairement [Github](https://github.com/abes-esr) comme gestionnaire de code open source (ou SCM pour source control management) associé à notre plateforme d'intégration continue (cf partie ci/cd).
 
-## Licences
+## Licence
 
 Tous les nouveaux projets créés par l'Abes depuis 2019 produisent du code opensource.
 
 Nous appliquons la [Licence CeCILL](https://fr.wikipedia.org/wiki/Licence_CeCILL) : c'est une licence équivalente à la GPL compatible avec le droit Français et [préconisée par la loi pour une République numérique](https://www.data.gouv.fr/fr/licences). Elle est donc "contaminante", c'est à dire qu'elle impose aux contributeurs de publier les modifications/améliorations réalisées sous la même licence. Cette licence est [positionnée dans l'application Hello Abes ici](https://github.com/abes-esr/abes-hello-front/blob/develop/LICENSE) et peut être prise comme exemple pour les nouvelles applications.  
-Les [bibliothèques de logiciels](https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_logicielle) ("librairies") développées sont elles publiées sous la [licence MIT](https://fr.wikipedia.org/wiki/Licence_MIT) qui permet une réutilisation moins contraignante et donc plus adapté à la nature de ces  codes.
 
-## Github / Gitlab
+Les [bibliothèques de logiciels](https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_logicielle) ("librairies") développées sont elles publiées sous la [licence MIT](https://fr.wikipedia.org/wiki/Licence_MIT) qui permet une réutilisation moins contraignante et donc plus adapté à la nature de ces  codes.
+## Forge logicielle : github
+
 
 Github et Gitlab fournissent une interface web qui :
 * donne accès aux fichiers, aux commits, à un moteur de recherche sur le code source
@@ -20,7 +21,8 @@ Github et Gitlab fournissent une interface web qui :
 
 Pour tous les développements réalisés par l'Abes depuis 2019, c'est Github qui est utilisé pour permettre la publication en open source. Le GitLab interne de l'Abes n'est plus utilisé pour les nouveaux développements.
 
-## Numéros de version
+## Numéros de version : semver
+
 
 Le projet est une succession d’itérations : demande de fonctionnalités, implémentation, correction des bugs etc. Ces évolutions sont reflétées par les numéros de version des projets.
 
@@ -37,7 +39,7 @@ Une release correspond à l'état stable d’une version. Si par exemple la cons
 
 A chaque release correspondant le tag Git ayant la même valeur `X.Y.Z` posé sur la branche `main` du code source.
 
-## Utilisation des branches
+## Utilisation des branches : gitflow
 
 Nous utilisons un système de branches inspiré de [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) : nous avons donc systématiquement deux branches :
 - `main` :
@@ -73,16 +75,8 @@ Parmi les bonnes pratiques à suivre en complément du workflow [Gitflow](https:
 * il faut ajouter des fichiers release-notes à chaque release. A noter que dans le cadre de la chaine de build opensource, ce sont les intitulé des Pull Request qui sont utilisés pour auto-générer le changelog de la release (exemple sur la [release 1.0.0 de licencesnationales-front](https://github.com/abes-esr/licencesnationales-front/releases/tag/1.0.0)).
 * Nous utilisons les "pull request" sur Github ("merge request" sur Gitlab) : les branches `main` et `develop` n'acceptent que les "merge" et non les "push". Les "merge" sont conditionnés à l'approbation d'au moins un autre développeur. Cette pratique permet de renforcer la qualité du code (relecture) et de partager le code produit.
 
-### Nommage des images docker
-
-Pour nommer les images docker publiées sur [DockerHub abesesr](https://hub.docker.com/u/abesesr), nous privilégions cette nommenclature :
-- `<organisationdocker>/<nomapplication>:<nom-branche|numero-version>-<module-applicatif>`
-- exemple pour l'image docker du front de l'application `abes-hello` sur sa branche `develop` : `abesesr/abes-hello:develop-front`
-- exemple pour l'image docker des batchs de l'application `abes-hello` sur sa branche `develop` : `abesesr/abes-hello:develop-batch`
-- exemple pour l'image docker du front de l'application `abes-hello` sur sa branche `main` : `abesesr/abes-hello:main-front`
-- exemple pour l'image docker du front de l'application `abes-hello` sur sa release `1.0.0` : `abesesr/abes-hello:1.0.0-front`
-
 ## Publier une nouvelle release d'une application
+
 
 Voici la procédure à appliquer pour publier une nouvelle release (nouvelle version) d'une application open-source produite par l'Abes :
 1. S'assurer que le code que l'on souhaite passer en production est bien présent sur la branche `main` (procéder à la fusion manuelle de la branche `develop` vers `main` si besoin)
@@ -98,8 +92,8 @@ Voici la procédure à appliquer pour publier une nouvelle release (nouvelle ver
 - le workflow `build-test-pubtodockerhub.yml` va se déclencher dans la foulée (cf le code du [workflow "build-test-pubtodockerhub" sur abes-hello](https://github.com/abes-esr/abes-hello-back/actions/workflows/build-test-pubtodockerhub.yml),
 - et une nouvelle image docker de l'application sera alors publiée avec comme tag docker le numéro de version de votre release (cf le  [dépôt docker hub de abes-hello](https://hub.docker.com/r/abesesr/abes-hello/)
 
-
 ## Messages de commit
+
 
 Un soin particulier doit être apporté à la rédaction des messages de commit. Pour les dépôts Github, la langue privilégiée est l'anglais.
 
@@ -115,13 +109,13 @@ Un soin particulier doit être apporté à la rédaction des messages de commit.
     * Refactor : Refactorisation ou nettoyage de code existant, sans impact sur les fonctionnalités
 
 Un message de commit doit donc être structuré ainsi :
-
-#NumeroISSUE Type : Message du commit
-
+```
+NumeroISSUE Type : Message du commit
 Court paragraphe décrivant les modifications plus en détail si nécessaire
-
+```
 
 ## Création et configuration d'un nouveau dépôt
+
 
 La création de dépôt opensource sur GitHub doit être privilégiée. La création de dépôt sur GitLab (interne à l'Abes) est utile dans certain rares cas (dépôt contenant des secrets, réorganisation de vieux codes).
 
@@ -147,6 +141,20 @@ Les dépôts Github publiés par l'Abes qui contiennent du code qui dépend de l
 > Attention : ce code (open)source, développé et maintenu par l'Abes ne peut pas (encore) être réutilisé à l'exterieur car il dépend de librairies internes. Contactez nous (github@abes.fr) si vous souhaitez y contribuer.
 
 Ainsi les collègues contributeurs externes à l'Abes sont prévenus rapidement et cela leur évite de perdre du temps à essayer de compiler/réutiliser le code.
+## Codes ESR ouverts et partagés sur Github
+
+Le github https://github.com/abes-esr/ regroupe également les codes sources des applications développées par les établissements des réseaux de l'Abes qui souhaitent les partager au niveau national à tout l'ESR (cf [présentation ici](https://punktokomo.abes.fr/2019/06/18/une-politique-informatique-ouverte-pour-labes/)).
+
+A noter que l'Abes n'impose pas aux établissements de respecter la politique de développement de l'Abes pour ne pas imposer des contraintes trop fortes. En revanche l'Abes demande de respecter quelques règles :
+- des règles de nommage du dépôt et la présence d'un README même minimaliste décrivant le contenu du dépôt (cf [cette section](https://politique-developpement.abes.fr/docs/Architecture%20des%20projets#nom-dun-projetapplication) et [cette section](https://politique-developpement.abes.fr/docs/Gestion%20du%20code%20source#cr%C3%A9ation-et-configuration-dun-nouveau-d%C3%A9p%C3%B4t))
+- une licence open source (l'établissement peut si besoin s'inspirer des [choix de l'Abes](https://politique-developpement.abes.fr/docs/Gestion%20du%20code%20source#licences))
+
+En option, l'Abes propose aux établissements un espace pour communiquer sur leur code source/application dans le [blog technique de l'Abes](https://punktokomo.abes.fr/) via un article (voici un [exemple](https://punktokomo.abes.fr/2019/10/08/sudoctoolkit-une-application-pour-faciliter-lutilisation-des-web-services-de-labes/))
+
+Pour faire une demande de dépôt de code source dans le github de l'Abes, les établissements sont invités à utiliser le guichet d'assistance de l'Abes : https://stp.abes.fr
+
+
+
 
 ## Codes ESR ouverts et partagés sur Github
 
