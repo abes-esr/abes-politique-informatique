@@ -1,12 +1,9 @@
-# Politique de développement de l'Abes
+# Politique informatique de l'Abes
 
-Vous êtes sur le README usager. Si vous souhaitez accéder au README développement, veuillez suivre ce lien : [README-developpement](README-developpement.md)
+Dépôt github contenant le contenu de la politique informatique de l'Abes et la packageant dans un site web statique à l'aide du [logiciel Docusaurus](https://docusaurus.io/fr/).
 
-Projet Docusaurus permettant la publication de la politique de développement de l'Abes sur un site web.
-Le site est déployé sur l'environnement de prod à l'aide de la configuration suivante : 
-https://github.com/abes-esr/politique-developpement-docker
+Le résultat de la politique informatique est consultable ici : https://politique-informatique.abes.fr/
 
-L'url d'accès du site en prod est : [https://politique-developpement.abes.fr/](https://politique-developpement.abes.fr/)
-
-Le site est construit à l'aide de Docusaurus [Docusaurus](https://docusaurus.io/)
-
+Voir aussi :
+- La configuration permettant de déployer ce site web est ici : https://github.com/abes-esr/abes-politique-developpement-docker
+- La documentation développeur permettant de faire évoluer ce site : [README-developpement.md](README-developpement.md)
