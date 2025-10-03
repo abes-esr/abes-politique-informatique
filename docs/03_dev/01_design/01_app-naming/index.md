@@ -10,7 +10,7 @@ Au niveau technique il est convenu de choisir un nom d'application respectant le
 * ne pas terminer par un chiffre (c'est une contrainte du puits de log de l'Abes qui n'accepte pas que le nom de l'application se termine par un chiffre, par exemple privilégier "projet-etab" plutôt que "projet2024")
 
 Ce nom sera ensuite utilisé dans le nom des dépôts github, dans le code source et sa documentation, dans les images et les conteneurs docker, dans les tests, dans les scripts de déploiement, dans le nom de domaine du site web. Si ce nom change, il devient alors nécessaire de modifier l'ensemble de la chaine technique.  
-Attention cette opération est couteuse d'où l'importance choisir un nom stable le plus en amont possible du projet.
+Attention le renommage est couteux d'où l'importance choisir un nom stable le plus en amont possible du projet.
 
 
 
