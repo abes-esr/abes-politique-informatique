@@ -1,6 +1,6 @@
 # Politique informatique de l'Abes
 
-Dépôt github contenant le contenu de la politique informatique de l'Abes et la packageant dans un site web statique à l'aide du [logiciel Docusaurus](https://docusaurus.io/fr/).
+Dépôt github contenant le contenu de la politique informatique de l'Abes et la configuration pour en faire un site web statique à l'aide du [logiciel Docusaurus](https://docusaurus.io/fr/).
 
 Le résultat de la politique informatique est consultable ici : https://politique-informatique.abes.fr/
 
