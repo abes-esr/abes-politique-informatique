@@ -36,7 +36,7 @@ Pour permettre et favoriser cette ouverture, l’Abes évite autant que possible
 
 Cette politique informatique définit une cible à atteindre. L’Abes l’adapte pour répondre à ses besoins au fil de ses expériences et de l'évolution des technologies. 
 
-Si vous souhaitez contribuer à la politique informatique de l'Abes, nous vous invitons à créer une « [pull request](https://docs.github.com/fr/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) » contenant votre contribution sur le dépôt github https://github.com/abes-esr/abes-politique-developpement 
+Si vous souhaitez contribuer à la politique informatique de l'Abes, nous vous invitons à créer une « [pull request](https://docs.github.com/fr/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) » contenant votre contribution sur le dépôt github https://github.com/abes-esr/abes-politique-informatique 
 L’équipe des informaticiens de l'Abes se chargera alors de relire votre contribution, de la discuter, de la valider et de l’intégrer dans le respect du cadre défini. 
 
 Les futures réalisations informatiques de l'Abes suivront ces nouveaux principes. Les anciennes briques du SI concernées seront progressivement mises à niveau pour les respecter. 
