@@ -36,7 +36,7 @@ Nous préconisons l'écriture de tests pour le code client produit avec le frame
 
 ## Tests fonctionnels
 
-Les tests fonctionnels ne sont pas automatisés. Ils nécessitent des actions manuelles qui consistent à venir tester les fonctionnalités de l'application aux différentes étapes du cycle de vie du logiciel.
+Les tests fonctionnels ne sont pas automatisés dans le SI Abes. Ils nécessitent des actions manuelles qui consistent à venir tester les fonctionnalités de l'application aux différentes étapes du cycle de vie du logiciel.
 
 Les différents environnements permettant de réaliser des tests fonctionnels sont le suivants : 
 - environnement de dev : cet environnement est ouvert aux développeurs et des tests fonctionnels basiques y sont réalisés par les développeurs eux même
