@@ -57,7 +57,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: ({versionDocsDirPath, docPath}) =>
-            `https://github.com/abes-esr/abes-politique-developpement/edit/polinfo/${versionDocsDirPath}/${docPath}`,
+            `https://github.com/abes-esr/abes-politique-informatique/edit/main/${versionDocsDirPath}/${docPath}`,
         },
         blog: false,
         theme: {
@@ -95,7 +95,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/abes-esr/abes-politique-developpement',
+            href: 'https://github.com/abes-esr/abes-politique-informatique',
             label: 'GitHub',
             position: 'right',
           },
