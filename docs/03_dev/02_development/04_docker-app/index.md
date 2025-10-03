@@ -40,18 +40,18 @@ Le fichier docker-compose.yml de l'application décrit tous les conteneurs de l'
   ```
   container_name: abes-hello-front
   ```
-- chaque service (sauf rares exceptions) doit se configurer pour redémarrer automatiquement au démarrage de la machine, sauf si l'humain a stoppé intentionnellement le conteneur, cf la directive suivante :
+- chaque service doit redémarrer automatiquement au démarrage de la machine sauf si l'humain a stoppé intentionnellement le service, ce comportement se configure avec cette directive :
   ```
   restart: unless-stopped
   ```
 - chaque service doit limiter sa consommation mémoire et cpu à 5Go et 5 cpu max (sauf rares exceptions) et désactiver la mémoire swap, cf la directive suivante :  
-  Dans docker-compose.yml :
+  Dans `docker-compose.yml` :
   ```
   mem_limit: ${MEM_LIMIT}
   memswap_limit: ${MEM_LIMIT}
   cpus: ${CPU_LIMIT}
   ```  
-  Avec dans .env-dist :
+  Avec dans `.env-dist` :
   ```
   ######################################################
   # Memory caping for containers : 5Go
