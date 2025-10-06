@@ -68,7 +68,7 @@ Une application qui est déployée en dev, test ou prod sera configurée différ
 Pour chaque application, nous préconisons l'utilisation de variables d'environnement qui utilisent le système du fichier `.env` que docker interprétera. Ce fichier contient les variables d'environnement nécessaires aux conteneurs de l'application. Ce fichier est personnalisé manuellement au moment du premier déploiement et dépend de l'environnement de déploiement : dev, test ou prod. Pour créer ce fichier il suffit de faire une copie du fichier `.env-dist` qui est dans le dépôt `<appli>-docker` de l'application. Ce fichier contient la liste des variables nécessaires aux conteneurs avec des exemples (voir un exemple sur [hello-abes](https://github.com/abes-esr/abes-hello-docker/blob/develop/.env-dist))
 
 Les variables doivent respecter la nomenclature suivante : 
-- être en majuscule et utiliser des `_` pour séparer les différentes parties
+- être en majuscule et utiliser des `_` pour séparer les différentes parties (attention c'est des "_" ici alors que pour le nom des services et conteneurs c'est en minuscule et avec des "-")
 - commencer par le nom du conteneur
 - continuer par un nom court expliquant ce que contient cette variable
 
