@@ -2,8 +2,8 @@
 # Stack technique
 
 Nous préconisons l'utilisation des technologies suivantes pour développer les outils et applications de l'Abes :
-- Java : pour la partie serveur (les api et les batch) de l'application
-- Javascript : pour la partie cliente (les front) de l'application
+- Java (spring) : pour la partie serveur (les api et les batch) de l'application
+- Javascript (vuejs) : pour la partie cliente (les front) de l'application
 - Elasticsearch : pour le moteur de recherche de l'application
 - Postgresql : pour la base de données de l'application
 - Docker : pour le packaging de l'application
