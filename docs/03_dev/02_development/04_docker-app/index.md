@@ -20,6 +20,11 @@ Pour nommer les images docker (elles sont publiées sur [DockerHub abesesr](http
 - exemple pour l'image docker du front de l'application `abes-hello` sur sa branche `main` : `abesesr/abes-hello:main-front`
 - exemple pour l'image docker du front de l'application `abes-hello` sur sa release `1.0.0` : `abesesr/abes-hello:1.0.0-front`
 
+Ci-dessous le cas particulier des images construites localement. Pour de rares applications dont le code source n'est pas encore ouvert, les images docker sont construites localement. Pour cela nous respectons les conventions suivantes :
+- le dépôt git permettant de déployer l'application est lui opensource et respecte la convention `<nom-appli>-docker`
+- le nom de l'image d'un conteneur de l'application doit reprendre le nom du conteneur lui même
+- le ou les `Dockerfile` permettant de construire les images sont placés dans un sous-répertoire de ce même dépôt : `images/<nom-image>/Dockerfile`
+- ce dépôt possède à sa racine le `docker-compose.yml` permettant de déployer l'application mais ce `docker-compose.yml` contient également les informations pour construire l'image (notamment le lien vers le ou les `Dockerfile` qui sont placés dans le sous-répertoire `images/`)
 
 ## Déploiement d'une application docker
 
