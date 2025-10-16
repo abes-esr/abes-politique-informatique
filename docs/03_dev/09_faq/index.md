@@ -1161,3 +1161,36 @@ Il faut définir une OracleDataSource spécifique via un Bean dans une classe @C
                 .type(OracleDataSource.class).build();
     }
 ```
+
+## Problème de fuite mémoire avec Jackson
+
+### Problème
+
+Lorsqu'on récupère, par exemple, le contenu d'une notice en XML dans la base Oracle, et qu'on le mappe en objet Java, en utilisant Jackson, on utilise la méthode getCharacterStream de le classe Clob : 
+```
+Optional<NoticesBibio> noticeOpt = baseXmlFunctionsCaller.findByPpn(ppn);
+if (noticeOpt.isPresent()) {
+    return xmlMapper.readvalue(noticeOpt.get().getDataXml().getCharacterStream(), NoticeXml.class);
+}
+```
+Cet exemple qui semble évident cache en réalité un problème de fuite mémoire. En effet, la méthode getCharacterStream renvoie un objet Reader qui est un stream devant être fermé pour libérer la mémoire allouée au fur et à mesure.
+
+### Solution
+Il suffit de gérer le traitement de getCharacterStream comme un stream classique avec try-with-ressource, une libération manuelle de la mémoire, et la gestion des exceptions : 
+```
+Optional<NoticesBibio> noticeOpt = baseXmlFunctionsCaller.findByPpn(ppn);
+if (noticeOpt.isPresent()) {
+    Clob clob = noticeOpt.get().getDataXml();
+
+    try (Reader reader = clob.getCharacterStream()){
+        return xmlMapper.readValue(reader, NoticeXml.class);
+    } catch (SQLException e) {
+        log.error(e.getMessage());
+    } finally {
+    try {
+        clob.free();
+    } catch (SQLException e) {
+        log.error(e.getMessage());
+    }
+}
+```
