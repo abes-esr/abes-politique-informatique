@@ -9,7 +9,7 @@ Nous pouvons classer nos projets / applications en trois catégories : api, web,
 
 ## Application de type API
 
-Depuis le projet d'établissement 2024-2028, nous privilégions la [stratégie "API first"](https://projet2024.abes.fr/docs/2.4/projet2024#24-une-strat%C3%A9gie-dapi) que ce soit pour le système de gestion de métadonnées central de l'Abes ou pour les applications satellites ou autonommes développées par l'Abes.
+Depuis le projet d'établissement 2024-2028, nous privilégions la [stratégie "API first"](https://projet2024.abes.fr/docs/2.4/projet2024#24-une-strat%C3%A9gie-dapi) que ce soit pour le système de gestion de métadonnées central de l'Abes ou pour les applications satellites ou autonomes développées par l'Abes.
 
 La technologie préconisée pour implémenter des API dans des applications développées par l'Abes est : Java Spring Boot
 
@@ -47,11 +47,11 @@ Voir aussi la section ci-dessous coucernant la sécurité.
 
 ### Documentation des API
 
-La documentation est proposée via OpenAPI. Pour les projets Java Spring, la documentation peut être générée facilement via l'outil SpringFox:
+La documentation est proposée via OpenAPI. Pour les projets Java Spring, la documentation peut être générée facilement via l'outil SpringDoc:
 
 * ajouter la dépendance dans le pom.xml
 * ajouter les annotations sur les méthodes dans les interfaces @ApiOperation(value = "renvoie les demandeModifs pour les administrateurs", notes ="...")
-* ajouter une classe SwaggerConfig
+* ajouter une classe OpenApiConfig
 
 La documentation produite doit suivre les recommandations de la DINUM pour le partage des données par API dans l'administration : [https://www.numerique.gouv.fr/publications/recommandations-partage-donnees-api/](https://www.numerique.gouv.fr/publications/recommandations-partage-donnees-api/)
 
