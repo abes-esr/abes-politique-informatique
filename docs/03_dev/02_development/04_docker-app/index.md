@@ -77,8 +77,9 @@ Les variables doivent respecter la nomenclature suivante :
 - commencer par le nom du conteneur
 - continuer par un nom court expliquant ce que contient cette variable
 
-Exemple (cf [git](https://github.com/abes-esr/abes-hello-docker/blob/05c1038233a5385a6a535685877e96fe931d9093/.env-dist#L65-L66)) : `ABESHELLO_DB_USER` pour le nom d'utilisateur d'une base de données, et `ABESHELLO_DB_PASSWORD` pour le mot de passe d'accès à cette meme base de données. 
+Exemple (cf [git](https://github.com/abes-esr/abes-hello-docker/blob/05c1038233a5385a6a535685877e96fe931d9093/.env-dist#L65-L66)) : `ABESHELLO_DB_USER` pour le nom d'utilisateur d'une base de données, et `ABESHELLO_DB_PASSWORD` pour le mot de passe d'accès à cette meme base de données.
 
+Dans certains cas les variables d'environnement ne sont pas suffisantes pour paramétrer l'application et des fichiers de configuration sont nécessaires (ex: fichier XML de paramétrage complexe, clé SSH). Pour répondre à ces cas nous préconisons de déposer le fichier de configuration dans un répertoire ``configs/<nom-conteneur>/mon-fichier.conf``, ensuite depuis ``docker-compose.yml`` le fichier de configuration peut être monté sous forme d'un volume au bon endroit dans le conteneur docker. 
 
 ## Choix des ports réseau des conteneurs
 
