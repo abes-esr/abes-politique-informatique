@@ -2,14 +2,48 @@
 
 ## Structure d’une application dockerisée
 
-Une application dockerisée respecte plusieurs règles :
-- l'application possède un dépôt pour son code source et c'est ce même dépôt qui est chargé de générer et de publier son image docker.
+Une application dockerisée est composée au minimum de deux dépôts git : un pour son code source, un pour son déploiement.
+
+L'application possède un dépôt pour son **code source** et c'est aussi dans ce dépôt que la génération et la publication de son image docker sont réalisées :
   - ce dépôt contient le `Dockerfile` de l'application dont l'objectif est de produire l'image docker de l'application pour qu'elle soit ensuite prête à être exécutée (ex: sur [abes-hello-back](https://github.com/abes-esr/abes-hello-back/blob/develop/Dockerfile))
   - le `Dockerfile` de l'application execute également les tests de l'application ce qui permet d'éviter de produire une image docker embarquant un code qui ne fonctionne pas (exemple de paramétrage maven sur [abes-hello-back](https://github.com/abes-esr/abes-hello-back/blob/develop/Dockerfile#L27))
   - ce dépôt contient une github action souvent nommée `build-test-pubtodockerhub.yml` (ex: sur [abes-hello-front](https://github.com/abes-esr/abes-hello-front/blob/develop/.github/workflows/build-test-pubtodockerhub.yml)) permettant de construire l'image Docker et de la publier sur l'[espace abesesr sur dockerhub](https://hub.docker.com/orgs/abesesr).
   - ce dépôt contient une github action souvent nommée `create-release.yml` (ex: sur [abes-hello-front](https://github.com/abes-esr/abes-hello-front/blob/develop/.github/workflows/create-release.yml)) permettant de créer une nouvelle version/release de l'application
 - l'application peut avoir besoin de plusieurs images docker, par exemple pour le front en vuejs (ex: [abes-hello-front](https://github.com/abes-esr/abes-hello-front/blob/develop/.github/workflows/build-test-pubtodockerhub.yml)), ou pour l'API en java Spring (ex: [abes-hello-back](https://github.com/abes-esr/abes-hello-front/blob/develop/.github/workflows/build-test-pubtodockerhub.yml))
-- l'application possède un dépôt dédiée à son déploiement avec `docker-compose`, cf section suivante.
+
+```
+Dépôt <monappli> :
+├── .github
+│   └── workflows
+│       ├── build-test-pubtodockerhub.yml
+│       └── create-release.yml
+├── Dockerfile
+├── src
+│   └── # ici le code source de l'application (remarque : le répertoire ne se nomme pas forcément src)
+├── LICENSE
+└── README.md
+```
+
+L'application possède également un dépôt dédié à son **déploiement** avec `docker-compose` (plus d'info dans la section suivante).
+- ce dépôt est nommé `<monappli>-docker`
+- le déploiement se fait grace à docker-compose et le fichier `docker-compose.yml` présent à la racine du dépôt (ex: sur [abes-hello](https://github.com/abes-esr/abes-hello-docker/blob/develop/docker-compose.yml))
+- un fichier de paramétrage exemple est également présent à la racine : `.env-dist` (ex: sur [abes-hello](https://github.com/abes-esr/abes-hello-docker/blob/develop/.env-dist))
+- un répertoire contenant les éventuelles données de l'application triées par conteneur est présent : `volumes/conteneur1/`
+- un répertoire contenant les éventuels fichiers de configuration de l'application triés par coentneur est présent : `configs/conteneur1/`
+- un README contenant la fiche d'exploitation de l'application est présent : `README.md`
+
+```
+Dépôt <monappli>-docker :
+├── volumes
+│   └── conteneur1
+│       └── # ici les fichiers de données du conteneur 1 (ex: les fichiers binaires postgresql si ce conteneur est une base de données)
+├── configs
+│   └── conteneur1
+│       └── # ici les fichiers de config du conteneur 1
+├── .env-dist
+├── docker-compose.yml
+└── README.md
+```
 
 ## Nommage des images docker
 
