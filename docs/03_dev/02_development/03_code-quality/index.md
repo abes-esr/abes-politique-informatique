@@ -54,7 +54,7 @@ En termes de programmation, nous cherchons à privilégier :
 * l'inversion de contrôle pour réduire le couplage entre classes
 * l'utilisation des design patterns reconnus (tout en prenant soin d'éviter l'écueil de la sur-utilisation)
 * les principes [KISS](https://fr.wikipedia.org/wiki/Principe_KISS), [YAGNI](https://fr.wikipedia.org/wiki/YAGNI) et [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas) 
-
+* des commentaires décrivant le pourquoi et/ou le comment de parties de code non évidentes
 
 
 
