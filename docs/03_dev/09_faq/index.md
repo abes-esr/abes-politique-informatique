@@ -1194,3 +1194,14 @@ if (noticeOpt.isPresent()) {
     }
 }
 ```
+
+## Problème d'espace pour les tables systèmes d'Oracle free version
+
+### Problème
+
+Lorsque les tables systèmes d'ORACLE ont accumulé trop d'information (statistiques, historiques) pour la version FREE d'Oracle qui limite la taille à max 12GB, on obtient l'erreur : 
+```
+ORA-12954: The request exceeds the maximum allowed database size of 12 GB.
+```
+### Solution
+voir https://github.com/abes-esr/rafa-docker?tab=readme-ov-file#comment-corriger-lerreur-ora-12954
