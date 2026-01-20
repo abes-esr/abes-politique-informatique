@@ -95,7 +95,7 @@ La phase de déploiement continu de la motification d'une application prend la s
 
 La configuration de watchtower pour permettre le déploiement automatique des nouvelles versions des images des conteneurs d'une application se sépare en deux parties.
 
-La première consiste à lancer un conteneur watchtower au sein de l'application, voici l'[exemple sur hello-abes](https://github.com/abes-esr/abes-hello-docker/blob/05c1038233a5385a6a535685877e96fe931d9093/docker-compose.yml#L206-L236).
+La première consiste à lancer un conteneur watchtower au sein de l'application, voici l'[exemple sur hello-abes](https://github.com/abes-esr/abes-hello-docker/blob/develop/docker-compose.yml#L212-L237).
 
 La seconde consiste à signaler à watchtower quels sont les conteneurs que l'on souhaite qu'il mette à jour si une nouvelle image docker de ce conteneur est détectée par watchtower, cela se passe par un système de labels, voici l'[exemple avec le label à positionner sur un conteneur](https://github.com/abes-esr/abes-hello-docker/blob/05c1038233a5385a6a535685877e96fe931d9093/docker-compose.yml#L65-L66) et la [correspondance via le nommage du label dans la configuration de watchtower](https://github.com/abes-esr/abes-hello-docker/blob/05c1038233a5385a6a535685877e96fe931d9093/docker-compose.yml#L235-L236).
 
