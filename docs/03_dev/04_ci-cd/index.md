@@ -39,7 +39,7 @@ Notre plateforme d'intégration continue open source en place depuis 2019 est co
 * [__GitHub__](https://github.com/abes-esr/) est le gestionnaire de codes sources. Il fournit une interface web qui permet de naviguer dans les différents projets, d’effectuer des recherches dans le code.
 * __GitHub Action__ qui sert à compiler les sources, lancer les tests, générer les versions, et générer les images docker (artefacts) des applications.
 * [__DockerHub__](https://hub.docker.com/u/abesesr) qui sert à stocker et à distribuer les images docker de nos applications une fois compilées par les GitHub Actions. Les images docker sont alors prêtes à être déployées en local, dev, test, et prod.
-* [__WatchTower__](https://containrrr.dev/watchtower/) qui sert à déployer automatiquement les applications docker sur les environnements dev, test, et prod.
+* [__WatchTower__](https://watchtower.nickfedor.com/) qui sert à déployer automatiquement les applications docker sur les environnements dev, test, et prod.
 * [__Maven Central__](https://search.maven.org/search?q=abes) qui est le gestionnaire de dépôts de librairies JAVA pour tous nos développements opensource depuis 2019 (remplace donc le Artifactory interne)
 * [__GitGuardian__](https://www.gitguardian.com/) qui sert à détecter d'éventuelles secret qui pourraient fuitter dans les commits envoyés en opensource sur GitHub.
 
