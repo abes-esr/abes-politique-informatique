@@ -16,7 +16,7 @@ Voici un exemple sur l'application exemple HelloAbes : https://github.com/abes-e
 ## Forge logicielle : github
 
 
-Github et Gitlab fournissent une interface web qui :
+[Github](https://github.com/abes-esr/) (pour les codes opensource) et [Gitlab](https://git.abes.fr/) (pour les codes legacy internes) fournissent une interface web qui :
 * donne accès aux fichiers, aux commits, à un moteur de recherche sur le code source
 * propose un éditeur de code en ligne
 * permet de suivre facilement les modifications apportées par les développeurs
@@ -24,6 +24,8 @@ Github et Gitlab fournissent une interface web qui :
 * donne accès un tableau de type Kanban qui nous permet de gérer les sprints lorsque le projet est mené en méthode agile. Un atout de ce tableau est de pouvoir lier les tâches aux commits.
 
 Pour tous les développements réalisés par l'Abes depuis 2019, c'est Github qui est utilisé pour permettre la publication en open source. Le GitLab interne de l'Abes n'est plus utilisé pour les nouveaux développements.
+
+A noter qu'un archivage pérenne des codes opensource de l'Abes ([Github](https://github.com/abes-esr/)) est réalisé automatiquement sur Software Heritage : https://archive.softwareheritage.org/browse/search/?q=abes-esr
 
 ## Numéros de version : semver
 
