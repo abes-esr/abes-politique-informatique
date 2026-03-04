@@ -47,15 +47,15 @@ Il est essentiel de comprendre que l'on n'industrialise pas le script lui-même,
 Signaux d'alerte pour le passage à l'industrialisation :
 
 - **Récurrence et automatisation** : Plus la fréquence d’utilisation d'un script ou paramétrage est élevée, plus il est important de l'automatiser et de l'intégrer au SI pour limiter la consommation de ressources humaines. Un script ou paramétrage qui est répétée plus de 6 fois par an doit être intégrée au SI et suivre le circuit de maintenance et de projet de l'Abes.
-  - Question clé : __Ai-je besoin de lancer mon script plus de 2 fois par an ?__
+  - Question clé : _Ai-je besoin de lancer mon script plus de 2 fois par an ?_
 
 - **Passage à l'échelle** : Un script ou paramétrage initialement défini pour des besoins individuels qui se met à fournir un service interne ou externe avec des attendus sur la disponibilité de ce service, doit être industrialisé et donc intégré au SI et suivre le circuit de maintenance et de projet de l'Abes.
-  - Question clé : __Mon script sert-il à d’autres que moi ?__
+  - Question clé : _Mon script sert-il à d’autres que moi ?_
 
 - **Complexité grandissante** : Un script ou paramétrage qui, de simple et facile à maintenir, devient complexe et difficile à maintenir au fil des usages, signale également un besoin de simplification et d'intégration au SI. Un script qu'on ne sait plus facilement faire évoluer pour intégrer une évolution demandée doit lever une alerte. Des [bonnes pratiques](https://politique-informatique.abes.fr/docs/dev/development/code-quality/#bonnes-pratiques-de-programmation) peuvent être adoptées pour limiter cette complexité.
-  - Question clé : __Si j’ai besoin de le faire évoluer, suis-je capable de savoir en moins de 30 mn où intervenir dans mon script ?__
+  - Question clé : _Si j’ai besoin de le faire évoluer, suis-je capable de savoir en moins de 30 mn où intervenir dans mon script ?_
 
 - **Risque d'éparpillement** : L'utilisation de langages non référencés dans la politique informatique doit être un signal d'alerte, car cela peut entraîner une dispersion des compétences et un manque de support dans le cas où ce script ou paramétrage viendrait à être intégré au SI. 
-  - Question clé : __Le collègue informaticien avec qui j’ai travaillé avait-il connaissance de ce langage de programmation ? Ai-je déjà discuté de maintenabilité du code avec lui et si oui a-t-il émis des recommandations ?__
+  - Question clé : _Le collègue informaticien avec qui j’ai travaillé avait-il connaissance de ce langage de programmation ? Ai-je déjà discuté de maintenabilité du code avec lui et si oui a-t-il émis des recommandations ?_
 
 
