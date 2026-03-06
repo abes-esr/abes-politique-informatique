@@ -21,9 +21,6 @@ les dépôts Github hébergeant les API doivent être nommés en respectant la n
 /)")
 - `<typeDeLApi>` est facultatif et correspond à la thématique métier de l'API en question au sein de l'application car il peut y avoir plusieurs modules pour plusieurs thématiques d'API, par exemple : une API pour la recherche, une autre pour l'affichage d'une notice, une autre pour les exports dans différents formats.
 
-Ainsi, les API concernant le sudoc seront regroupées par exemple dans un dépôt Github : [https://github.com/abes-esr/sudoc-api/](https://github.com/abes-esr/sudoc-api/)
-Les API seront ensuite accessibles via une url comme `https://www.sudoc.fr/services/bestppn`
-
 ### Multi-dépôts ou Mono-dépôt pour des API ?
 
 Plusieurs dépôts sont à privilégier lorsque les API d'une même application n'ont que peu de rapport entre elles.
