@@ -34,9 +34,10 @@ Un seul dépôt est pertinent lorsque plusieurs API partagent la même thématiq
 
 ### Versionnage des API
 
-Les API doivent être versionnées en utilisant la notation v1, v2 dans l'url. Ainsi, on peut mettre en ligne une nouvelle version d'une API (/v2) tout en préservant pour un temps donné la version en cours (/v1).
-On utilise le versionnage sémantique [https://semver.org/lang/fr/](https://semver.org/lang/fr/) pour gérer les versions de nos applications, les v1, v2 de l'url des API correspondent au premier numéro de la notation sémantique.
-On change ce numéro en cas de modification dans les paramètres d'entrée ou de sortie de l'API, ou en cas de changement majeur de comportement susceptible de casser les programmes externes appelant nos API.
+Les API doivent être versionnées en utilisant la notation v1, v2 dans l'url.
+
+Ainsi, on peut mettre en ligne une nouvelle version d'une API (/v2) tout en préservant pour un temps donné la version en cours (/v1).
+On utilise le versionnage sémantique [https://semver.org/lang/fr/](https://semver.org/lang/fr/) pour gérer les versions de nos applications, les v1, v2 de l'url des API correspondent au premier numéro de la notation sémantique. On change ce numéro en cas de modification dans les paramètres d'entrée ou de sortie de l'API, ou en cas de changement majeur de comportement susceptible de casser les programmes externes appelant nos API.
 
 ### Sécurité des API
 
