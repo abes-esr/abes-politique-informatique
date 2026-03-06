@@ -17,8 +17,8 @@ La technologie préconisée pour implémenter des API dans des applications dév
 
 les dépôts Github hébergeant les API doivent être nommés en respectant la nomenclature : `<xxx>-api-<typeDeLAPI>`.
 
-- `<xxx>` correspond au nom de l'application (cf section "[nommage](../01_app-naming
-/)")
+- `<xxx>` correspond au nom de l'application (cf section ["nommage"](../01_app-naming
+/))
 - `<typeDeLApi>` est facultatif et correspond à la thématique métier de l'API en question au sein de l'application car il peut y avoir plusieurs modules pour plusieurs thématiques d'API, par exemple : une API pour la recherche, une autre pour l'affichage d'une notice, une autre pour les exports dans différents formats.
 
 ### Multi-dépôts ou Mono-dépôt pour des API ?
