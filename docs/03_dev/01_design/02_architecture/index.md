@@ -19,15 +19,21 @@ les dépôts Github hébergeant les API doivent être nommés en respectant la n
 
 - `<xxx>` correspond au nom de l'application (cf section "[nommage](../01_app-naming
 /)")
-- `<typeDeLApi>` est facultatif et correspond au sens métier de l'API en question au sein de l'application car il peut y avoir plusieurs modules pour plusieurs API, par exemple une API pour la recherche, une autre pour l'affichage d'une notice, une autre pour les exports dans différents formats.
+- `<typeDeLApi>` est facultatif et correspond à la thématique métier de l'API en question au sein de l'application car il peut y avoir plusieurs modules pour plusieurs thématiques d'API, par exemple : une API pour la recherche, une autre pour l'affichage d'une notice, une autre pour les exports dans différents formats.
 
 Ainsi, les API concernant le sudoc seront regroupées par exemple dans un dépôt Github : [https://github.com/abes-esr/sudoc-api/](https://github.com/abes-esr/sudoc-api/)
 Les API seront ensuite accessibles via une url comme `https://www.sudoc.fr/services/bestppn`
 
 ### Multi-dépôts ou Mono-dépôt pour des API ?
 
-Plusieurs dépôts sont à privilégier lorsque les API d'une même application n'ont que peu de rapport entre elles. Par exemple [https://github.com/abes-esr/theses-api-recherche](https://github.com/abes-esr/theses-api-recherche) contient les API relatives à la recherche dans les métadonnées des thèses tandis que [https://github.com/abes-esr/theses-api-diffusion](https://github.com/abes-esr/theses-api-diffusion) regroupe des services permettant de récupérer les documents thèses.
-Un seul dépôt est pertinent lorsque plusieurs API partagent la même thématique. On aura alors un répertoire par API, comme c'est le cas pour [https://github.com/abes-esr/idref-api/](https://github.com/abes-esr/idref-api/) ou [https://github.com/abes-esr/qualinka-microservices/](https://github.com/abes-esr/qualinka-microservices/)
+Plusieurs dépôts sont à privilégier lorsque les API d'une même application n'ont que peu de rapport entre elles.
+Par exemple :
+- [https://github.com/abes-esr/theses-api-recherche](https://github.com/abes-esr/theses-api-recherche) contient les API relatives à la recherche dans les métadonnées des thèses
+- [https://github.com/abes-esr/theses-api-diffusion](https://github.com/abes-esr/theses-api-diffusion) regroupe des services permettant de récupérer les documents thèses
+
+Un seul dépôt est pertinent lorsque plusieurs API partagent la même thématique. On aura alors un répertoire par API. Par exemple :
+- [https://github.com/abes-esr/idref-api/](https://github.com/abes-esr/idref-api/)
+- [https://github.com/abes-esr/qualinka-microservices/](https://github.com/abes-esr/qualinka-microservices/)
 
 ### Versionnage des API
 
