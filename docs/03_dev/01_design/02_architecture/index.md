@@ -17,12 +17,9 @@ La technologie préconisée pour implémenter des API dans des applications dév
 
 les dépôts Github hébergeant les API doivent être nommés en respectant la nomenclature : `<xxx>-api-<typeDeLAPI>`.
 
-Pour choisir `<xxx>`, on garde à l'esprit que :
-- le nom du projet ne sera pas obligatoirement le nom de l'application finale
-- le nom de domaine en production devra correspondre à `<xxx>`
-- les "marques" Abes devront correspondre à `<xxx>`
-
-Pour choisir `<typeDeLApi>`, on précise la finalité de l'API si pertinent.
+- `<xxx>` correspond au nom de l'application (cf section "[nommage](../01_app-naming
+/)")
+- `<typeDeLApi>` est facultatif et correspond au sens métier de l'API en question au sein de l'application car il peut y avoir plusieurs modules pour plusieurs API, par exemple une API pour la recherche, une autre pour l'affichage d'une notice, une autre pour les exports dans différents formats.
 
 Ainsi, les API concernant le sudoc seront regroupées par exemple dans un dépôt Github : [https://github.com/abes-esr/sudoc-api/](https://github.com/abes-esr/sudoc-api/)
 Les API seront ensuite accessibles via une url comme `https://www.sudoc.fr/services/bestppn`
