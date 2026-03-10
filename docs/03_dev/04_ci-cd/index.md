@@ -39,7 +39,7 @@ Notre plateforme d'intégration continue open source en place depuis 2019 est co
 * [__GitHub__](https://github.com/abes-esr/) est le gestionnaire de codes sources. Il fournit une interface web qui permet de naviguer dans les différents projets, d’effectuer des recherches dans le code.
 * __GitHub Action__ qui sert à compiler les sources, lancer les tests, générer les versions, et générer les images docker (artefacts) des applications.
 * [__DockerHub__](https://hub.docker.com/u/abesesr) qui sert à stocker et à distribuer les images docker de nos applications une fois compilées par les GitHub Actions. Les images docker sont alors prêtes à être déployées en local, dev, test, et prod.
-* [__WUD__](https://getwud.github.io/wud/#/) qui sert à déployer automatiquement les applications docker sur les environnements dev, test, et prod.
+* [__WUD__](https://getwud.github.io/wud/#/) qui sert à déployer automatiquement les applications docker sur les environnements dev, test, et prod (cf. le [dépôt abes-wud-docker](https://github.com/abes-esr/abes-wud-docker)).
 * [__Maven Central__](https://search.maven.org/search?q=abes) qui est le gestionnaire de dépôts de librairies JAVA pour tous nos développements opensource depuis 2019 (remplace donc le Artifactory interne)
 * [__GitGuardian__](https://www.gitguardian.com/) qui sert à détecter d'éventuelles secret qui pourraient fuitter dans les commits envoyés en opensource sur GitHub.
 
@@ -88,7 +88,7 @@ La phase de déploiement continu de la modification d'une application prend la s
 - lors de la phase d'intégration continue, la modification de l'application a généré une nouvelle image docker qui a été publiée sur dockerhub en respectant un système de nommage (cf section sur le nommage des images docker)
 - la phase de déploiement de la modification de l'application prends alors la suite.
   - Les paramètres dédiés au déploiement de l'application (docker-compose.yml et .env) doivent être opérationnels (cf partie "Déploiement d'une application docker") et l'application doit avoir été démarrée manuellement une première fois sur au moins un environnement (dev,test ou prod).
-  - Ensuite c'est l'outil [WUD](https://getwud.github.io/wud/#/) qui prends le relais. WUD est un conteneur docker installé sur toutes les machines hébergeant les containers. Il vérifie toutes les 5 minutes (paramétrable) si une nouvelle image docker de l'application est disponible sur DockerHub.
+  - Ensuite c'est l'outil [WUD](https://getwud.github.io/wud/#/) qui prends le relais. WUD est un [conteneur docker](https://github.com/abes-esr/abes-wud-docker) installé sur toutes les machines hébergeant les containers. Il vérifie toutes les 5 minutes (paramétrable) si une nouvelle image docker de l'application est disponible sur DockerHub.
   - Si une nouvelle image docker de l'application est disponible sur DockerHub, alors WUD va se charger de la déployer. Pour cela il va télécharger la nouvelle image, puis il va arrêter et supprimer le conteneur de l'application à mettre à jour (celui qui correspond à la nouvelle image), puis il va créer un nouveau conteneur avec cette nouvelle image en injectant les mêmes paramètres du précédent conteneur, enfin il va notifier qu'il a réalisé ce déploiement sur un canal slack (cf FAQ "Notification slack des déploiements réalisés avec WUD")
 
 ### Configuration de WUD
