@@ -1064,52 +1064,6 @@ delete from batch_job_instance;
 commit;
 ```
 
-## Erreur de déploiement automatique avec watchtower : "you have reached your pull rate limit"
-
-### Problème
-
-L'outil watchtower utilisé pour le déploiement continue des applications docker Abes fait appels récurrents à l'API de dockerhub et cela peut provoquer des erreurs de ce type :
-> Error response from daemon: toomanyrequests you have reached your pull rate limit
-
-![image](https://github.com/abes-esr/abes-politique-developpement/assets/328244/14b1502c-3ed3-4614-af3b-9d6ee9ddc118)
-
-### Solution
-
-Deux solutions :
-- Soit souscrire au programme DockerHub OpenSource Program sur l'organisation DockerHub en question (A la date du 12/2023, c'est le cas sur l'organisation abesesr mais pas le cas sur l'organisation transitionbibliographique). Cf la limitation que permet de lever le programme OpenSource de Dockerhub :
-  > Rate-limit removal for all users pulling public images from your project namespace
-- Soit configurer watchtower pour utiliser un login/mdp dockerhub pour faire les appels à l'API de dockerhub (la limitation "rate limit" est alors moins drastique qu'un appel anonyme à l'API), voici les paramètres watchtower à utiliser dans cet [exemple ici](https://github.com/abes-esr/abes-hello-docker/blob/develop/docker-compose.yml#L132-L134). Le login ayant des droits en lecture qui est à utiliser pour faire des docker pull sur l'organisation abesesr de dockerhub est le suivant : ``dockerhubabes`` (le mot de passe est à demander à pic@abes.fr)
-
-## Notification slack des déploiements réalisés avec watchtower
-
-### Problème
-
-Je souhaite que watchtower notifie un canal slack lorsqu'il déploie une nouvelle version de mon application. Pour cela je dois renseigner la variable `WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL` au niveau du conteneur watchtower associé aux conteneurs de mon application mais je ne sais pas comment générer cette URL ?
-
-Voici ce que j'aimerais obtenir sur slack lorsqu'une nouvelle version de mon application est déployée:  
-![image](https://github.com/abes-esr/abes-politique-developpement/assets/328244/2b01f3d2-81bc-489e-aee7-59414bd06a6b)
-
-
-### Solution
-
-Etape 1 : vous devez vous connecter à votre espace slack.
-
-Etape 2 : vous devez créer un canal en respectant cette nomenclature `#notif-<nomappli>` qui sera la cible des notifications (exemple de nom : `#notif-qualimarc`)
-
-Etape 3 : vous devez vous rendre ici https://abes-esr.slack.com/apps/manage/custom-integrations puis cliquer sur "Webhooks entrants" :  
-![image](https://github.com/abes-esr/abes-politique-developpement/assets/328244/220f5506-b1b1-41bd-a5f4-d32cca552354)
-
-Etape 4 : vous devez ensuite créer un nouveau webhook entrant en cliquant ici :  
-![image](https://github.com/abes-esr/abes-politique-developpement/assets/328244/45b5c643-3b90-4e95-b890-99308330b1d1)
-
-Etape 5 : choisissez sur quel canal vous souhaitez envoyer vos notifications puis créer votre webhook :  
-![image](https://github.com/abes-esr/abes-politique-developpement/assets/328244/3ec38ba7-d333-4b1b-b741-a3cb61f00402)
-
-Etape 6 : sur l'écran suivant vous obtenez l'URL que vous pouvez copier coller pour la reporter dans la valeur de la variable `WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL` :  
-![image](https://github.com/abes-esr/abes-politique-developpement/assets/328244/02b9b313-cb82-4bbe-840f-bb42edaa01d0)
-
-Dans cette étape 6 vous pouvez si vous le souhaitez configurer le nom du bot, son logo etc pour améliorer l'apparence sur slack mais ce n'est pas obligatoire.
-
 ## Accès impossible sur un volume docker depuis le serveur hote
 
 ### Problème
