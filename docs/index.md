@@ -28,7 +28,7 @@ Les objectifs de cette politique peuvent se résumer ainsi :
 ## Open source 
 
 Depuis 2019, tous les nouveaux développements informatiques réalisés par l’Abes sont en open source et disponibles sur la plateforme Github https://github.com/abes-esr/  
-L’Abes publie également sa politique informatique en open source, à la fois pour partager les règles que ses informaticiens suivent et aussi pour faciliter la co-construction avec les partenaires. 
+L’Abes publie également sa politique informatique en [open source / open data](https://github.com/abes-esr/abes-politique-informatique), à la fois pour partager les règles que ses informaticiens suivent et aussi pour faciliter la co-construction avec les partenaires. 
 
 Pour permettre et favoriser cette ouverture, l’Abes évite autant que possible d’appliquer une politique de [sécurité par l’obscurité](https://fr.wikipedia.org/wiki/S%C3%A9curit%C3%A9_par_l%27obscurit%C3%A9) ce qui se traduit directement dans ce document par une transparence relativement forte sur des éléments internes du SI Abes. 
 
