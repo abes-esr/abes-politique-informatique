@@ -158,5 +158,5 @@ A noter que l'Abes n'assure pas la maintenance de ces dépôts et n'impose pas a
 
 En option, l'Abes propose aux établissements un espace pour communiquer sur leur code source/application dans le [blog technique de l'Abes](https://punktokomo.abes.fr/) via un article (voici un [exemple](https://punktokomo.abes.fr/2019/10/08/sudoctoolkit-une-application-pour-faciliter-lutilisation-des-web-services-de-labes/))
 
-Pour faire une demande de dépôt de code source dans le github de l'Abes, les établissements sont invités à utiliser le guichet d'assistance de l'Abes : https://stp.abes.fr
+Pour faire une demande de dépôt de code source dans le github de l'Abes, les établissements sont invités à utiliser le guichet d'assistance de l'Abes : https://assistance.stp.abes.fr
 
