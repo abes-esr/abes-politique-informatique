@@ -79,6 +79,10 @@ Le fichier docker-compose.yml de l'application décrit tous les conteneurs de l'
   ```
   container_name: abes-hello-front
   ```
+- en production, chaque service doit utiliser une image dont le numéro de version est figé - ne pas utiliser "latest" par exemple. (A noter qu'il est judicieux de rendre paramétrable ce numéro de version depuis le .env pour pouvoir ensuite facilement le modifier qd on souhaite monter de version une applicaiton) : 
+  ```
+  image: abesesr/abes-hello:1.2.2
+  ```
 - chaque service doit redémarrer automatiquement au démarrage de la machine sauf si l'humain a stoppé intentionnellement le service, ce comportement se configure avec cette directive :
   ```
   restart: unless-stopped
