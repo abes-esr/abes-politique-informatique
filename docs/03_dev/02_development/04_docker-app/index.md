@@ -79,7 +79,7 @@ Le fichier docker-compose.yml de l'application décrit tous les conteneurs de l'
   ```
   container_name: abes-hello-front
   ```
-- en production, chaque service doit utiliser une image dont le numéro de version est figé - ne pas utiliser "latest" par exemple. (A noter qu'il est judicieux de rendre paramétrable ce numéro de version depuis le .env pour pouvoir ensuite facilement le modifier qd on souhaite monter de version une applicaiton) : 
+- en production, chaque service doit utiliser une image dont le numéro de version est figé - ne pas utiliser "latest" par exemple. (A noter qu'il est judicieux de rendre paramétrable ce numéro de version depuis le .env pour pouvoir ensuite facilement le modifier qd on souhaite monter de version une application) : 
   ```
   image: abesesr/abes-hello:1.2.2
   ```
