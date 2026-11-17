@@ -1159,3 +1159,31 @@ ORA-12954: The request exceeds the maximum allowed database size of 12 GB.
 ```
 ### Solution
 voir https://github.com/abes-esr/rafa-docker?tab=readme-ov-file#comment-corriger-lerreur-ora-12954
+
+
+## Problème avec l'utilisation de git sur le dépôt d'un serveur type diplotaxis
+
+Si vous utilisez git sur un serveur diplotaxis et que vous obtenez l'erreur suivante : ```error: cannot open '.git/FETCH_HEAD': Permission denied```
+
+- Il faut modifier les droits du dossier .git :
+
+     ```console
+    sudo chmod -R g+rwX .git
+    ```
+
+Pour éviter que l'erreur se reproduise avant le prochain git clone, il faut ajouter une ligne au fichier ~/.bashrc 
+
+- Dans le fichier ~/.bashrc vérifiez que la ligne "umask u=rwx,g=rwx,o=rx" est bien présente
+- Sinon, saisir :
+
+    ```console
+    echo "umask u=rwx,g=rwx,o=rx" >> ~/.bashrc
+    source ~/.bashrc
+    ```
+
+- Cloner le projet à partir de GitHub.
+
+     ```console
+    cd /opt/pod/
+    git clone git@github.com:abes-esr/qualimarc-docker.git
+  ```
